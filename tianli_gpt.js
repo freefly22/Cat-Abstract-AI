@@ -52,7 +52,7 @@ function insertAIDiv(selector) {
   const aiTagDiv = document.createElement('div');
   aiTagDiv.className = 'tianliGPT-tag';
   aiTagDiv.id = 'tianliGPT-tag';
-  aiTagDiv.textContent = 'CatGPT - TianliGPT(1)';
+  aiTagDiv.textContent = 'CatGPT - TianliGPT';
   aiTagDiv.addEventListener('click', () => {
     window.open('https://catgpt.miaorun.dev/', '_blank');
   });
@@ -214,8 +214,9 @@ function fillDescriptionContent() {
 }
 
 function initRun() {
-  insertAIDiv(tianliGPT_postSelector);
-  fillDescriptionContent();
-}
+        insertAIDiv(tianliGPT_postSelector);
+        fillDescriptionContent();
+        runTianliGPT(); // 在 initRun 函数中调用 runTianliGPT 函数
+      };
 
 checkURLAndRun();
